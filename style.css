@@ -1,32 +1,56 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #ffe6ee;
-  height: 100vh;
   margin: 0;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, #ffe3ec, #ffc2d1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card container */
+.container {
+  background: white;
+  padding: 48px 56px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Buttons wrapper */
+.buttons {
+  position: relative;
+  margin-top: 32px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 28px;
 }
 
-.container {
-  text-align: center;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
+/* Base button style */
 button {
-  padding: 14px 32px;
+  padding: 14px 36px;
   font-size: 18px;
   font-weight: 600;
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
 /* YES button */
@@ -36,31 +60,40 @@ button {
 }
 
 #yesBtn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(255, 77, 109, 0.4);
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(255, 77, 109, 0.45);
 }
 
 #yesBtn:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 /* NO button */
 #noBtn {
-  background: #f1f1f1;
-  color: #555;
+  background: #f2f2f2;
+  color: #666;
+  position: absolute;
+  left: calc(50% + 80px);
+  transition: transform 0.08s linear;
 }
 
-#noBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+/* Result section */
+#result {
+  margin-top: 36px;
 }
 
 .hidden {
   display: none;
 }
 
-img {
-  margin-top: 20px;
-  max-width: 300px;
-  border-radius: 12px;
+#result h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #ff4d6d;
+}
+
+#result img {
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
